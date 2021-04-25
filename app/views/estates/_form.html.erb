@@ -37,7 +37,7 @@
     <%= form.text_area :note %>
   </div>
 
-  
+  </div>
   <% @num = 1 %>
   <%= form.fields_for :stations do |s| %>
     <h3>最寄駅<%= @num %></h3>
@@ -47,9 +47,8 @@
     <%= s.text_field :station_name %><br><br>
     <%= s.label :徒歩距離 %>
     <p><%= s.number_field :walking_time %>分</p>
-    <% @num +=1 %>
-    <% end %>
-    <div class="action">
-    <%= form.submit "登録する" %><br>
-    </div>
+    <% @num += 1 %>
   <% end %>
+   <div class="actions">
+    <%= form.submit "登録する" %><br>
+<% end %>

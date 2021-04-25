@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>物件一欄</h1>
+<h1>物件一覧</h1>
 
 <table>
   <thead>
@@ -18,11 +18,11 @@
     <% @estates.each do |estate| %>
       <tr>
         <td><%= estate.name %></td>
-        <td><%= estate.rent_fee.to_s(:delimited, delimiter: ',') %>円</td>
+        <td><%= estate.rent.to_s(:delimited, delimiter: ',') %>円</td>
         <td><%= estate.address %></td>
         <td><%= estate.age %>年</td>
         <td><%= estate.note %></td>
-        <td><%= link_to '詳細', estate, class: "vertical" %></td>
+        <td><%= link_to '詳細', estate, class:"vertical" %></td>
         <td><%= link_to '編集', edit_estate_path(estate) %></td>
         <td><%= link_to '削除', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to '物件を登録', new_estate_path %>
+<%= link_to '物件を登録する', new_estate_path %>
